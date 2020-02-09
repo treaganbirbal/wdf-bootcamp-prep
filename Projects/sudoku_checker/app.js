@@ -19,10 +19,10 @@ const getRow = (grid, rowIdx) => {
   if(!grid.length){
       return;
   }
-  //loop through grid to get specific row by rowIdx where rowIdx is i-th index
-  for(let i = 0; i )
+ //return an array with all elements in specific row---grid[rowIdx]
+  return grid[rowIdx]
 };
 
-// console.log(getRow(puzzle))
+console.log(getRow(puzzle, 3))
 
    console.log(puzzle.length)
