@@ -23,6 +23,12 @@ const getRow = (grid, rowIdx) => {
   return grid[rowIdx]
 };
 
-console.log(getRow(puzzle, 3))
+// console.log(getRow(puzzle, 0))
 
-   console.log(puzzle.length)
+const getColumn = (grid, columnIdx) => {
+    if(!grid.length){
+        return
+    }
+    
+}
+
