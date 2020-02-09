@@ -12,7 +12,7 @@ let puzzle = [
   [3, 2, 8, 1, 9, 6, 5, 4, 7]
 ];
 
-//getRow: This function should accept two arguments: a sudoku grid (represented by an array of arrays) and a row index. The function should return an array containing the numbers in the specified row.
+//-------getRow: This function should accept two arguments: a sudoku grid (represented by an array of arrays) and a row index. The function should return an array containing the numbers in the specified row.
 
 const getRow = (grid, rowIdx) => {
     //check to see if there are any rows in grid
@@ -23,12 +23,28 @@ const getRow = (grid, rowIdx) => {
   return grid[rowIdx]
 };
 
-// console.log(getRow(puzzle, 0))
+// console.log(getRow(puzzle, 0)) => [8, 9, 5, 7, 4, 2, 1, 3, 6]
+
+//------getColumn: This function should accept a sudoku grid and a column index. The function should return an array containing the numbers in the specified column.
 
 const getColumn = (grid, columnIdx) => {
-    if(!grid.length){
-        return
+    //create an array to return 
+    let columnArr = []
+    //check to see if there are elements in grid, if columnIdx is within Bounds
+    if(!grid.length || columnIdx >= grid.length || columnIdx < 0){
+        throw new Error("Column Not Found!")
     }
-    
+    //loop through to get elements in column 
+    //Each column will include elements of 0th array in grid...
+    for(let i = 0; i < grid[0].length; i++){
+     // ...push into columnsArr
+        column.push(grid[i][columnIdx])
+    }
+    //return an array with elements of specific column.
+    return columnArr
 }
+
+console.log(getColumn(puzzle, 9))
+
+
 
