@@ -12,6 +12,8 @@ let puzzle = [
   [3, 2, 8, 1, 9, 6, 5, 4, 7]
 ];
 
+//getRow: This function should accept two arguments: a sudoku grid (represented by an array of arrays) and a row index. The function should return an array containing the numbers in the specified row.
+
 const getRow = (grid, rowIdx) => {
   
 };
