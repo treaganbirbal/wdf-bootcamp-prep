@@ -15,9 +15,14 @@ let puzzle = [
 //getRow: This function should accept two arguments: a sudoku grid (represented by an array of arrays) and a row index. The function should return an array containing the numbers in the specified row.
 
 const getRow = (grid, rowIdx) => {
-  
+    //check to see if there are any rows in grid
+  if(!grid.length){
+      return;
+  }
+  //loop through grid to get specific row by rowIdx where rowIdx is i-th index
+  for(let i = 0; i )
 };
 
 // console.log(getRow(puzzle))
 
-//    console.log(puzzle)
+   console.log(puzzle.length)
