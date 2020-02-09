@@ -38,13 +38,13 @@ const getColumn = (grid, columnIdx) => {
     //Each column will include elements of 0th array in grid...
     for(let i = 0; i < grid[0].length; i++){
      // ...push into columnsArr
-        column.push(grid[i][columnIdx])
+        columnArr.push(grid[i][columnIdx])
     }
     //return an array with elements of specific column.
     return columnArr
 }
 
-console.log(getColumn(puzzle, 9))
+// console.log(getColumn(puzzle, 3)) => [7, 9, 5, 6, 2, 4, 8, 3, 1]
 
 
 
