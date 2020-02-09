@@ -46,5 +46,11 @@ const getColumn = (grid, columnIdx) => {
 
 // console.log(getColumn(puzzle, 3)) => [7, 9, 5, 6, 2, 4, 8, 3, 1]
 
+//getGrid: This function should accept three arguments: a sudoku grid, and an x and y coordinate for one of the puzzle's 3x3 subgrids. The function should return an array with all the numbers in the specified subgrid.
 
+const getGrid = (grid, xCoordinate, yCoordinate) => {
+    
+}
+
+// const getGrid()
 
