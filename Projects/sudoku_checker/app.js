@@ -1,5 +1,5 @@
 let puzzle = [
-  [8, 9, 5,   7, 4, 2,   1, 3, 6],
+  [8, 5, 5,   7, 4, 2,   1, 3, 6],
   [2, 7, 1,   9, 6, 3,   4, 8, 5],
   [4, 6, 3,   5, 8, 1,   7, 9, 2],
 
@@ -11,6 +11,16 @@ let puzzle = [
   [7, 4, 6,   3, 2, 5,   8, 1, 9],
   [3, 2, 8,   1, 9, 6,   5, 4, 7]
 ];
+
+let p8zzle = [[ 8,9,5,7,4,2,1,3,6 ],
+              [ 8,7,1,9,6,3,4,8,5 ],
+              [ 4,6,3,5,8,1,7,9,2 ],
+              [ 9,3,4,6,1,7,2,5,8 ],
+              [ 5,1,7,2,3,8,9,6,4 ],
+              [ 6,8,2,4,5,9,3,7,1 ],
+              [ 1,5,9,8,7,4,6,2,3 ],
+              [ 7,4,6,3,2,5,8,1,9 ],
+              [ 3,2,8,1,9,6,5,4,7 ]];
 
 //-------getRow: This function should accept two arguments: a sudoku grid (represented by an array of arrays) and a row index. The function should return an array containing the numbers in the specified row.
 
@@ -44,7 +54,7 @@ const getColumn = (grid, columnIdx) => {
   return columnArr;
 };
 
-// console.log(getColumn(puzzle, 3)) => [7, 9, 5, 6, 2, 4, 8, 3, 1]
+//console.log(getColumn(puzzle, 0)) // => [7, 9, 5, 6, 2, 4, 8, 3, 1]
 
 //getGrid: This function should accept three arguments: a sudoku grid, and an x and y coordinate for one of the puzzle's 3x3 subgrids. The function should return an array with all the numbers in the specified subgrid.
 
@@ -54,7 +64,7 @@ const getGrid = (grid, xCoordinate, yCoordinate) => {
   let topLeft;
   let topCenter;
   let topRight;
-  let midleft;
+  let midLeft;
   let midCenter;
   let midRight;
   let bottomLeft;
@@ -73,8 +83,8 @@ const getGrid = (grid, xCoordinate, yCoordinate) => {
     for (let i = 0; i < grid.length; i++) {
       subGrid.push(grid[i].slice(3, 6));
     }
-    topMiddle = subGrid.slice(0, 3).flat(1);
-    return topMiddle;
+    topCenter = subGrid.slice(0, 3).flat(1);
+    return topCenter;
   }
   if (xCoordinate === 2 && yCoordinate === 0) {
     for (let i = 0; i < grid.length; i++) {
@@ -127,19 +137,36 @@ const getGrid = (grid, xCoordinate, yCoordinate) => {
   }
 };
 
-// console.log(getGrid(puzzle, 2, 2)); // -> [ 7,4,2,9,6,3,5,8,1 ]
+// console.log(getGrid(puzzle, 0, 0)); // -> [ 8,9,5,2,7,1,4,6,3 ]
 
-const includes1to9 = (row, column) => {
+const includes1to9 = (grid, row, column) => {
     let nums = [1, 2, 3, 4, 5, 6, 7, 8 , 9]
-    const subGrid = getGrid(puzzle, row, column)
-    if(subGrid.length !== 9){
-        return 'this section is not complete'
-    } else {
+    const subGrid = getGrid(grid, row, column)
+    console.log(subGrid)
+    // if(subGrid.length !== 9){
+    //     return 'this section is not complete'
+    // } else {
        let sortedGrid = subGrid.sort((a, b) => a -b)
+       console.log(sortedGrid)
         for(let i = 0; i < nums.length; i++){
-            return nums[i] === sortedGrid[i] ? true : false ;
-        }
+            // console.log('sorted: ',sortedGrid[i], 'nums ', nums[i])
+            if(sortedGrid[i] === nums[i]){
+                return true
+            } else {
+                return false
+            }
+        // }
     }
 }
 
-console.log(includes1to9(1, 0))
+console.log(includes1to9(puzzle, 0, 0))
+
+const sodukuIsValid = (grid, row, column) => {
+    if(includes1to9(grid, row, column)){
+        return true
+    }
+    return false;
+}
+
+
+// console.log(sodukuIsValid(puzzle, 0 , 0))
