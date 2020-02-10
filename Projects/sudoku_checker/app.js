@@ -137,13 +137,21 @@ const getGrid = (grid, xCoordinate, yCoordinate) => {
         bottomCenter = subGrid.slice(0,3).flat(1)
         return bottomCenter
     }
+    if(xCoordinate === 2 && yCoordinate === 2){
+        for(let i = 6; i < grid.length; i++){
+            subGrid.push(grid[i].slice(6, 9))
+            console.log(subGrid)
+        }
+        bottomRight = subGrid.slice(0,3).flat(1)
+        return bottomRight
+    }
     
 // console.log(topLeft)
 }
 
 
 
-console.log(getGrid(puzzle, 1, 2 )) // -> [ 7,4,2,9,6,3,5,8,1 ]
+console.log(getGrid(puzzle, 2, 2 )) // -> [ 7,4,2,9,6,3,5,8,1 ]
 
 
 
