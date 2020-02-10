@@ -137,11 +137,7 @@ const includes1to9 = (row, column) => {
     } else {
        let sortedGrid = subGrid.sort((a, b) => a -b)
         for(let i = 0; i < nums.length; i++){
-            if(sortedGrid[i] === nums[i]){
-                return true
-            } else {
-                return false
-            }
+            return nums[i] === sortedGrid[i] ? true : false ;
         }
     }
 }
