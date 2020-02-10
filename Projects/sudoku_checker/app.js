@@ -121,12 +121,20 @@ const getGrid = (grid, xCoordinate, yCoordinate) => {
         midRight = subGrid.slice(0,3).flat(1)
         return midRight
     }
+    if(xCoordinate === 0 && yCoordinate === 2){
+        for(let i = 6; i < grid.length; i++){
+            subGrid.push(grid[i].slice(0, 3))
+            console.log(subGrid)
+        }
+        bottomLeft = subGrid.slice(0,3).flat(1)
+        return bottomLeft
+    }
 // console.log(topLeft)
 }
 
 
 
-console.log(getGrid(puzzle, 1, 2 )) // -> [ 7,4,2,9,6,3,5,8,1 ]
+console.log(getGrid(puzzle, 0, 2 )) // -> [ 7,4,2,9,6,3,5,8,1 ]
 
 
 
