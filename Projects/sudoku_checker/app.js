@@ -132,8 +132,6 @@ const getGrid = (grid, xCoordinate, yCoordinate) => {
 const includes1to9 = (row, column) => {
     let nums = [1, 2, 3, 4, 5, 6, 7, 8 , 9]
     const subGrid = getGrid(puzzle, row, column)
-    subGrid[8] = 5
-    console.log(subGrid)
     if(subGrid.length !== 9){
         return 'this section is not complete'
     } else {
