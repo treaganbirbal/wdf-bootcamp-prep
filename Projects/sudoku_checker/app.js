@@ -127,4 +127,25 @@ const getGrid = (grid, xCoordinate, yCoordinate) => {
   }
 };
 
-console.log(getGrid(puzzle, 2, 2)); // -> [ 7,4,2,9,6,3,5,8,1 ]
+// console.log(getGrid(puzzle, 2, 2)); // -> [ 7,4,2,9,6,3,5,8,1 ]
+
+const includes1to9 = (row, column) => {
+    let nums = [1, 2, 3, 4, 5, 6, 7, 8 , 9]
+    const subGrid = getGrid(puzzle, row, column)
+    subGrid[8] = 5
+    console.log(subGrid)
+    if(subGrid.length !== 9){
+        return 'this section is not complete'
+    } else {
+       let sortedGrid = subGrid.sort((a, b) => a -b)
+        for(let i = 0; i < nums.length; i++){
+            if(sortedGrid[i] === nums[i]){
+                return true
+            } else {
+                return false
+            }
+        }
+    }
+}
+
+console.log(includes1to9(1, 0))
