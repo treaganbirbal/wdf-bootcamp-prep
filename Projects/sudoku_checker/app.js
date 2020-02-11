@@ -142,12 +142,12 @@ const getGrid = (grid, xCoordinate, yCoordinate) => {
 const includes1to9 = (grid, row, column) => {
     let nums = [1, 2, 3, 4, 5, 6, 7, 8 , 9]
     const subGrid = getGrid(grid, row, column)
-    console.log(subGrid)
+    // console.log(subGrid)
     // if(subGrid.length !== 9){
     //     return 'this section is not complete'
     // } else {
        let sortedGrid = subGrid.sort((a, b) => a -b)
-       console.log(sortedGrid)
+    //    console.log(sortedGrid)
         for(let i = 0; i < nums.length; i++){
             // console.log('sorted: ',sortedGrid[i], 'nums ', nums[i])
             if(sortedGrid[i] === nums[i]){
@@ -159,14 +159,16 @@ const includes1to9 = (grid, row, column) => {
     }
 }
 
-console.log(includes1to9(puzzle, 0, 0))
+// console.log(includes1to9(puzzle, 0, 0))
 
-const sodukuIsValid = (grid, row, column) => {
-    if(includes1to9(grid, row, column)){
-        return true
+const sodukuIsValid = (grid) => {
+    grid.forEach((el,i) => {
+        // console.log(getRow(grid, i))
+    for(let j = 0; j < grid.length; j++){
+        // console.log(getColumn(grid, j))
     }
-    return false;
+    })
 }
 
 
-// console.log(sodukuIsValid(puzzle, 0 , 0))
+console.log(sodukuIsValid(puzzle))
