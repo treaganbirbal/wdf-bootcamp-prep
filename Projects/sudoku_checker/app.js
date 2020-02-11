@@ -144,7 +144,6 @@ const includes1to9 = (grid, i, j) => {
     let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     const subGrid = getGrid(grid, i, j)
     let sortedGrid = subGrid.sort((a, b) => a -b)
-    //    console.log(sortedGrid)
        for(num in subGrid){
            if(nums[num] === subGrid[num]){
              match = true
