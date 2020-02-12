@@ -1,5 +1,5 @@
 let puzzle = [
-  [8, 9, 5,   7, 4, 2,   1, 3, 6],
+  [8, 9, 5,   7, 6, 2,   1, 3, 6],
   [2, 7, 1,   9, 6, 3,   4, 8, 5],
   [4, 6, 3,   5, 8, 1,   7, 9, 2],
 
@@ -137,7 +137,7 @@ const getGrid = (grid, xCoordinate, yCoordinate) => {
   }
 };
 
-// console.log(getGrid(puzzle, 0, 0)); // -> [ 8,9,5,2,7,1,4,6,3 ]
+console.log(getGrid(puzzle, 1, 0)); // -> [ 7,4,2,9,6,3,5,8,1 ]
 
 const includes1to9 = (grid, i, j) => {
     let match
@@ -145,7 +145,7 @@ const includes1to9 = (grid, i, j) => {
     const subGrid = getGrid(grid, i, j)
     let sortedGrid = subGrid.sort((a, b) => a -b)
        for(num in subGrid){
-           if(nums[num] === subGrid[num]){
+           if(nums[num] === sortedGrid[num]){
              match = true
            } else {
                match = false
@@ -154,20 +154,20 @@ const includes1to9 = (grid, i, j) => {
        return match
 }
 
-console.log(includes1to9(puzzle, 0, 0))
+// console.log(includes1to9(puzzle, 1, 0))
 
 const sodukuIsValid = (grid) => {
     let row 
     let column
-    grid.forEach((el,i) => {
-        row = i
-       getRow(grid, row)
+    grid.forEach((el, row) => {
+       let singleRow = (getRow(grid, row))
     for(let j = 0; j < grid.length; j++){
         column = j
-       getColumn(grid, column)
+       let singleColumn = getColumn(grid, column)
+        console.log(includes1to9(grid, row, column))
+
     }
     })
-    // console.log(includes1to9(grid, row, column))
 }
 
 
