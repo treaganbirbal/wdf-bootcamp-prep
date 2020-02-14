@@ -3,6 +3,19 @@ let leetChars = ['@', '8', '(', '|)', '3', 'ph', 'g', '#','l', '_|', '|<', '1', 
 
 // YOUR CODE BELOW
 
-function leetTranslator(obj1, obj2){
+function leetTranslator(word){
+ const dict = {};
+ for(let i = 0; i < letters.length; i++){
+     dict[letters[i]] = leetChars[i];
+ }
 
+  let casedWord = word.toLowerCase();
+  let leetWord = '';
+ for(let j = 0; j < casedWord.length; j++){
+     leetWord += dict[casedWord[j]]
+ }
+ return leetWord;
 }
+
+
+console.log(leetTranslator('yerrrrrs'))
