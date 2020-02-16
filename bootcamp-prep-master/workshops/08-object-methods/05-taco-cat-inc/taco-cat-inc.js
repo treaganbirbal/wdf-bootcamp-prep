@@ -23,3 +23,20 @@ let tacoCatInc = {
 };
 
 // YOUR CODE BELOW
+
+
+tacoCatInc.currentInventory = function(){
+  let total = 0
+  for(let categories in tacoCatInc){
+    if(categories === 'cash'){
+      continue;
+    }
+    let items = tacoCatInc[categories]
+     for(let itemName in items){
+       let itemObj = items[itemName]
+       total += itemObj.cost * itemObj.quantity
+     }
+  }
+  return total
+}
+
