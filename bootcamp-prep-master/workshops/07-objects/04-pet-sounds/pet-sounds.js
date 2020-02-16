@@ -54,7 +54,12 @@ let animalNoises = [
 // YOUR CODE BELOW
 
 function petSounds(pet, country){
-  let pets = Object.keys(animalNoises)
-  console.log(pets)
+  for(let pets in animalNoises){
+    let pet = animalNoises[pets]
+    for(let countries in pet){
+      let country = pet[countries]
+      console.log(country)
+    }
+   }
   return `${pet} in ${country} say ${sound}`
 }
