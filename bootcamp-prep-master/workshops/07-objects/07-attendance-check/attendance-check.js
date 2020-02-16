@@ -57,3 +57,5 @@ function attendanceCheck(day){
     
     return studentsPresent
   }
+
+  console.log(attendanceCheck('Friday'))
