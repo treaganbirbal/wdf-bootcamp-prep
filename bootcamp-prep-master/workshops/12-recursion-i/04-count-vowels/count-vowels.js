@@ -6,7 +6,7 @@ function countVowels(sentence){
         return 0
     }
     let count = 0;
-    if(isAVowel(str[0])){
+    if(isAVowel(sentence[0])){
         count += 1;
     }
     count += countVowels(sentence.slice(1))
@@ -17,3 +17,5 @@ function isAVowel(char){
     let vowels = ['a', 'e', 'i', 'o', 'u'];
     return vowels.includes(char)
 }
+
+console.log(countVowels('treagan'))
