@@ -40,3 +40,16 @@ tacoCatInc.currentInventory = function(){
   return total
 }
 
+
+tacoCatInc.sale = function(orderObj){
+  let total = 0;
+    
+    for(let categories in orderObj){
+      let choices = orderObj[categories]
+      total += this[categories][choices].cost
+      this.cash += this[categories][choices].cost
+      this[categories][choices].quantity --
+    }
+    return total
+  }
+  
