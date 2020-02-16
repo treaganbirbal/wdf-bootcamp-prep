@@ -54,12 +54,9 @@ let animalNoises = [
 // YOUR CODE BELOW
 
 function petSounds(pet, country){
-  for(let pets in animalNoises){
-    let pet = animalNoises[pets]
-    for(let countries in pet){
-      let country = pet[countries]
-      console.log(country)
-    }
-   }
-  return `${pet} in ${country} say ${sound}`
+  for(let i = 0; i < animalNoises.length; i++){
+    let animalObj = animalNoises[i];
+    console.log(animalObj)
+  }
+  return pet[0].toUpperCase() + ' in ' + country  + ' say ' + sound + "!"
 }
