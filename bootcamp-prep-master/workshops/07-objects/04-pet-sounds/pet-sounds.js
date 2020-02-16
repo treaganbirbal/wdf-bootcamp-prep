@@ -55,8 +55,15 @@ let animalNoises = [
 
 function petSounds(pet, country){
   for(let i = 0; i < animalNoises.length; i++){
-    let animalObj = animalNoises[i];
-    console.log(animalObj)
+    let petObj = animalNoises[i];
+    if(pet in petObj){
+      let countrySounds = petObj[pet]
+      let sound = countrySounds[country]
+            // console.log(pet.slice(1))
+
+      pet = pet[0].toUpperCase() + pet.slice(1) + 's'; 
+      console.log(pet)
+      return pet + ' in ' + country  + ' say ' + sound;
+    }
   }
-  return pet[0].toUpperCase() + ' in ' + country  + ' say ' + sound + "!"
 }
