@@ -38,3 +38,9 @@ let classRoom = [
 ];
 
 // YOUR CODE BELOW
+
+function attendanceCheck(day){
+    const studentsPresent = [];
+    
+    return studentsPresent
+  }
