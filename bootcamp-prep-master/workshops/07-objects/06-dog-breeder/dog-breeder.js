@@ -7,6 +7,8 @@ function dogBreeder(name='Steve', age=0){
         age = name;
         }
     }
+        dogObj['name'] = name;
+        dobObj['age'] = age
 
     return dogObj
   }
