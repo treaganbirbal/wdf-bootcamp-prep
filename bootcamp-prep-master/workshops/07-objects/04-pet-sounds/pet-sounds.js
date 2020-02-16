@@ -53,6 +53,8 @@ let animalNoises = [
 
 // YOUR CODE BELOW
 
-function petSounds (animalName, countryName){
-  return;
+function petSounds(pet, country){
+  let pets = Object.keys(animalNoises)
+  console.log(pets)
+  return `${pet} in ${country} say ${sound}`
 }
