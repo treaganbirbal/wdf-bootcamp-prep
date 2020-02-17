@@ -18,3 +18,4 @@ const isPalindrome = (str) => {
     return isPalindrome(remainingStr)
 }
 
+console.log(isPalindrome('kayak'))
