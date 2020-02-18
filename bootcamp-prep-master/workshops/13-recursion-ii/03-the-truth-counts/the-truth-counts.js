@@ -12,5 +12,7 @@ const theTruthCounts = (array) => {
         }
     }
     return count
-}ß
+}
+
+console.log(theTruthCounts([0, [true, ['yes']]])); // => 2
 
