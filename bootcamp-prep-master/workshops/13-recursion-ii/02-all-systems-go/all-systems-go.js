@@ -14,16 +14,3 @@ function allSystemsGo(systems){
     return true;
 }
 
-function allSystemsGo(anObj){
-    for(let keys in anObj){
-      if(typeof(anObj[keys]) === 'object'){
-        let isValid = allSystemsGo(anObj[keys])
-        if(!isValid){
-          return false
-        } 
-      } else if(!anObj[keys]){
-        return false
-      }
-    }
-    return true;
-  }
