@@ -8,7 +8,6 @@ const sumDigits = (num) => {
     let sum = 0;
     sum += Number(str[0])
     sum += sumDigits(Number(str.slice(1)))
-    // console.log(sum)
     return sum
 }
 
