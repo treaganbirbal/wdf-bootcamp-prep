@@ -1,5 +1,17 @@
 // YOUR CODE BELOW
 
+
+let family = {
+    'Beverly Marquez': {
+      'Nina Rhone': {
+        'William Rhodes': null,
+        'Paul Nell': null,
+        'Sir Paddington the Fourth, of the county Wilstonshire': null
+      }
+    }
+  };
+
+
 function getLongestName(family){
     let longestName = '';
 
@@ -17,3 +29,5 @@ function getLongestName(family){
 
     return longestName
 }
+
+console.log(getLongestName(family))
