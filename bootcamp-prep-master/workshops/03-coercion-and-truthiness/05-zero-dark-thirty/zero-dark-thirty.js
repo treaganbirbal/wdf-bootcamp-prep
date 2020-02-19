@@ -12,4 +12,6 @@ function zeroDarkThirty(num){
     }
     return Number(strOfNums)
   }
+
+  console.log(zeroDarkThirty(102304302))
   
