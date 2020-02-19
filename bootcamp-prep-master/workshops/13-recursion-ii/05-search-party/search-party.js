@@ -3,8 +3,11 @@
 function searchParty(name, worldObj){
 
     for(let place in worldObj){
-        if(typeof(worldObj[place] === 'string')){
+        if(typeof(worldObj[place]) === 'string'){
+            let person = worldObj[place]
+            if(name === person){
             return [place]
+            }
         }
         else if(Array.isArray(worldObj[place])){
             let people = worldObj[place];
@@ -24,3 +27,13 @@ function searchParty(name, worldObj){
     
     return null;
 }
+
+let world = {
+    'Fullstack': {
+      '11th floor': 'Marge',
+      '25th floor': 'Francis'
+    },
+    'Subway': ['Jackie', 'Grumio']
+  };
+
+console.log(searchParty('Jackie',world))
