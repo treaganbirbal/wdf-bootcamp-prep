@@ -15,3 +15,7 @@ const billerBuilder = (state) => {
     }
 }
 
+let newJersBiller = biller('NJ');
+newJersBiller(100)
+
+console.log()
