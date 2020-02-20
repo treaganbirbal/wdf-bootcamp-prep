@@ -5,3 +5,9 @@ const stringify = (cb) => {
         return String(cb)
     }
 }
+
+const returnsNum = (num) => {
+    return num
+}
+
+console.log(stringify(returnsNum))
