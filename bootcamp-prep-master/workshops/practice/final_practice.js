@@ -3,6 +3,22 @@
 
 // Note: Assume all potions are brewed by a different witch/wizard.
 
+function namePotionBrewers(obj){
+    let nameOutput = ''
+
+    const potionObj = Object.keys(obj)
+    const brewerNames = []
+    for(let i = 0; i < potionObj.length; i++){
+        let potionName = potionObj[i];
+        let brewer = obj[potionName].brewedBy
+        if(brewer.length > 12){
+            brewerNames.push(brewer)
+        }
+        nameOutput = brewerNames.join(' & ')
+    }
+    return nameOutput
+}
+
 const hpObj = {
     "amortentia": {
       "definition": "creates powerful obsession and infatuation",
@@ -17,3 +33,5 @@ const hpObj = {
       "brewedBy": "Horace Slughorn"
     }
   }
+
+  console.log(namePotionBrewers(hpObj))
