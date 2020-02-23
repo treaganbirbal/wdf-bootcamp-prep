@@ -9,7 +9,7 @@ const zooInventory = (multiArr) => {
       let name = multiArr[i][0]
       let animalType = multiArr[i][1][0]
       let age = multiArr[i][1][1]
-      sentence += name + ' the ' + animalType + ' is ' +        age + '.' 
+      sentence += name + ' the ' + animalType + ' is ' +    age + '.' 
       output.push(sentence)
       // sentence = ''
     }

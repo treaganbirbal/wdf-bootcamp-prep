@@ -17,5 +17,4 @@ const getDogBreeder = (defaultName, defaultAge) => {
     return newDog;
   }
     
-    
   }
